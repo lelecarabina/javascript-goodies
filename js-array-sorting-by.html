@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Array Sorting</title>
+  <style></style>
+  <script>
+  var myDrinks=[
+        {name:"Wine", calories:125, type:"red", portion:1},
+        {name:"Beer", calories:155, type:"blonde", portion:1},
+        {name:"Tequila", calories:70, type:"anejo", portion:1},
+        {name:"Whiskey", calories:70, type:"black", portion:1},
+        {name:"Vodka", calories:65, type:"triple distilled", portion:1},
+        {name:"Cramberry Juice", calories:115, type:"organic", portion:1},
+        {name:"Orange Juice", calories:40, type:"no pulp", portion:1},
+    ];
+
+    function sortByName(drink1,drink2){
+      if(drink1.name>drink2.name){
+        return 1;
+      } else if(drink1.name===drink2.name){
+        return 0;
+      } else { return -1; }
+    }
+
+    function sortByType(drink1,drink2){
+      if(drink1.type>drink2.type){
+        return 1;
+      } else if(drink1.type===drink2.type){
+        return 0;
+      } else { return -1; }
+    }
+
+    function sortByCalories(drink1,drink2){
+      return drink1.calories-drink2.calories;//reduced formula only works w/ numbers
+    }
+
+    function sortByPortion(drink1,drink2){
+      return drink1.portion-drink2.portion;//reduced formula only works w/ numbers
+    }
+
+    function listDrinks(myDrinks){
+      for(var i=0,max=myDrinks.length;i<max;i++){
+        console.log("Name: "+myDrinks[i].name+", Calories: "+myDrinks[i].calories+", Type: "+myDrinks[i].type+", Portion: "+myDrinks[i].portion);
+      }
+    }
+
+    var sortedBy=">>> Drinks sorted by ";
+
+    console.log(sortedBy+"name:");
+    myDrinks.sort(sortByName);
+    listDrinks(myDrinks);
+
+    console.log(sortedBy+"calories:");
+    myDrinks.sort(sortByCalories);
+    listDrinks(myDrinks);
+
+    console.log(sortedBy+"type:");
+    myDrinks.sort(sortByType);
+    listDrinks(myDrinks);
+
+    console.log(sortedBy+"amount:");
+    myDrinks.sort(sortByPortion);
+    listDrinks(myDrinks);
+
+    </script>
+  </head>
+
+  <body>
+    <script></script>
+  </body>
+  </html>
